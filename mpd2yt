@@ -1,0 +1,20 @@
+#!/usr/bin/python
+
+import mpd
+import webbrowser
+import urllib
+
+MPD_IP = "localhost"
+MPD_PORT = 6600
+
+client = mpd.MPDClient(use_unicode=True)
+client.connect(MPD_IP, MPD_PORT)
+
+currentsong = client.currentsong()
+artist = currentsong.get("artist").encode('utf8')
+title = currentsong.get("title").encode('utf8')
+
+url = "https://www.youtube.com/results?search_query=" + artist + " " + title
+url = urllib.quote(url, safe=":/?=")
+
+webbrowser.open(url)
