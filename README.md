@@ -14,4 +14,4 @@ An mpd must be playing a song, then
 or
 `./pympd`
 
-I suggest setting it as a keyboard shortcut, like <Super + y>
+I suggest setting it as a keyboard shortcut, like Super + y
